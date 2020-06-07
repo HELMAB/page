@@ -4,7 +4,9 @@ Publishing with the repeat working such as privacy policy and terms & conditions
 
 # Installation
 
-`composer require asorasoft/page`
+```
+composer require asorasoft/page
+```
 
 Register `PageServiceProvider` in `config/app.php` file
 
@@ -17,7 +19,7 @@ return [
 ];
 ```
 
-Publish routes, model, controller and view files
+Publish routes, model, migration, controller and view files
 
 ```
 php artisan vendor:publish --provider="Asorasoft\Page\Providers\PageServiceProvider"
