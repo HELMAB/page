@@ -1,0 +1,19 @@
+{
+    "name": "asorasoft/page",
+    "description": "Publishes such privacy policy and terms & conditions page",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "HEL Mab",
+            "email": "mabhelitc@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Asorasoft\\Page\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {}
+}
