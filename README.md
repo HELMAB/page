@@ -19,10 +19,38 @@ return [
 ];
 ```
 
+Publish `page.php` configuration file and then you need to run command `php artisan config:cache`
+
+```
+php artisan vendor:publish --tag=page-config
+```
+
+and you can modify those the directory.
+
+```php
+<?php
+
+return [
+    'route' => [
+        'frontend' => 'routes/Api/Frontend',
+        'backend' => 'routes/Api/Backend',
+    ],
+    'controller' => [
+        'frontend' => 'app/Http/Controllers/Api/Frontend',
+        'backend' => 'app/Http/Controllers/Api/Backend',
+    ],
+    'types' => [
+        'privacy-policy' => 'privacy-policy',
+        'terms-and-conditions' => 'terms-and-conditions',
+    ],
+    'view' => 'resources/views'
+];
+```
+
 Publish routes, model, migration, controller and view files
 
 ```
-php artisan vendor:publish --provider="Asorasoft\Page\Providers\PageServiceProvider"
+php artisan vendor:publish --tag=page-resource
 ```
 # Usage
 
@@ -44,15 +72,16 @@ Route::group(['prefix' => 'page'], function () {
 
 ```php
 Route::group(['prefix' => 'page'], function () {
-    Route::post('{type}', 'PageController@getPage');
+    Route::get('{type}', 'PageController@getPage');
 });
 ```
 
-## UI
+## UI or Webview
 
 The view file is located `resources/views/page.blade.php` 
 connect with controller `app/Http/Controllers/PageController`
 Please register this route at `routes/web.php` file.
+
 ```php
 Route::get('page/{type}', 'PageController@getPage');
 ```

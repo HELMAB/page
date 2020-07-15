@@ -26,6 +26,9 @@ class PageServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__ . '/../config' => base_path('config'),
+        ], 'page-config');
+
+        $this->publishes([
             __DIR__ . '/../Models' => base_path('app/Models'),
             __DIR__ . '/../Migrations' => base_path('database/migrations'),
             __DIR__ . '/../Views' => base_path(config('page.view', 'resources/views')),
@@ -34,6 +37,6 @@ class PageServiceProvider extends ServiceProvider
             __DIR__ . '/../Controllers/Frontend' => base_path(config('page.controller.frontend')),
             __DIR__ . '/../Controllers/Backend' => base_path(config('page.controller.backend')),
             __DIR__ . '/../Controllers/Ui' => base_path('app/Http/Controllers'),
-        ], 'page');
+        ], 'page-resource');
     }
 }

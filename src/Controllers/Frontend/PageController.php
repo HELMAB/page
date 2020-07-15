@@ -8,14 +8,10 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function getPage(Request $request)
+    public function getPage($type)
     {
-        $this->validate($request, [
-            'type' => 'required',
-        ]);
-
         $page = Page::where([
-            'type' => $request->type,
+            'type' => $type,
             'active' => true,
         ])->first();
 
