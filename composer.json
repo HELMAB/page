@@ -15,5 +15,7 @@
         }
     },
     "minimum-stability": "dev",
-    "require": {}
+    "require": {
+        "webpatser/laravel-uuid": "^3.0"
+    }
 }
