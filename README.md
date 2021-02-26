@@ -2,6 +2,8 @@ Page
 ---------------------------
 Publishing with the repeat working such as privacy policy and terms & conditions page.
 
+![screenshot.png](assets/img/screenshot.png)
+
 ## Installation
 
 ```
