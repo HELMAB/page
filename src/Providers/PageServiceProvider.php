@@ -32,7 +32,7 @@ class PageServiceProvider extends ServiceProvider
             __DIR__ . '/../Models' => base_path('app/Models'),
             __DIR__ . '/../Migrations' => base_path('database/migrations'),
             __DIR__ . '/../Database' => base_path('public/pages'),
-            __DIR__ . '/../Seeds' => base_path('database/seeds'),
+            __DIR__ . '/../Seeders' => base_path('database/seeders'),
             __DIR__ . '/../Views' => base_path(config('page.view', 'resources/views')),
             __DIR__ . '/../Routes/Frontend' => base_path(config('page.route.frontend')),
             __DIR__ . '/../Routes/Backend' => base_path(config('page.route.backend')),
