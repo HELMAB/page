@@ -2,7 +2,7 @@ Page
 ---------------------------
 Publishing with the repeat working such as privacy policy and terms & conditions page.
 
-# Installation
+## Installation
 
 ```
 composer require asorasoft/page
@@ -53,7 +53,7 @@ Publish routes, model, migration, controller and view files
 ```shell
 php artisan vendor:publish --tag=page-resource --force
 ```
-# Usage
+## Usage
 
 ### Dummy Data
 
