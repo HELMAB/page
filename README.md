@@ -21,8 +21,9 @@ return [
 
 Publish `page.php` configuration file and then you need to run command `php artisan config:cache`
 
-```
-php artisan vendor:publish --tag=page-config
+```shell
+php artisan vendor:publish --tag=page-config  --force
+php artisan optimize
 ```
 
 and you can modify those the directory.
@@ -49,12 +50,19 @@ return [
 
 Publish routes, model, migration, controller and view files
 
-```
-php artisan vendor:publish --tag=page-resource
+```shell
+php artisan vendor:publish --tag=page-resource --force
 ```
 # Usage
 
-## Backend
+### Dummy Data
+
+```shell
+composer dumpautoload
+php artisan db:seed --class=PageTableSeeder
+```
+
+### Backend
 
 ```php
 Route::group(['prefix' => 'page'], function () {
@@ -68,7 +76,7 @@ Route::group(['prefix' => 'page'], function () {
 });
 ```
 
-## Frontend
+### Frontend
 
 ```php
 Route::group(['prefix' => 'page'], function () {
@@ -76,7 +84,7 @@ Route::group(['prefix' => 'page'], function () {
 });
 ```
 
-## UI or Webview
+### UI or Webview
 
 The view file is located `resources/views/page.blade.php` 
 connect with controller `app/Http/Controllers/PageController`

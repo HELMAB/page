@@ -6,7 +6,7 @@ use App\Models\Page;
 
 class PageController extends Controller
 {
-    public function getPage($type)
+    public function getPage($type, $local = 'en')
     {
         $page = Page::where([
             'type' => $type,
@@ -17,6 +17,6 @@ class PageController extends Controller
             return abort(404);
         }
 
-        return view('page', compact('page'));
+        return view('page', compact('page', 'local'));
     }
 }

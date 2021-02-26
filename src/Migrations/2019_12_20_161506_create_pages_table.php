@@ -19,7 +19,7 @@ class CreatePagesTable extends Migration
             $table->string('title_km');
             $table->string('title_en');
             $table->string('type');
-            $table->boolean('active')->default(false);
+            $table->boolean('active')->default(true);
             $table->longText('content_km');
             $table->longText('content_en');
             $table->timestamps();

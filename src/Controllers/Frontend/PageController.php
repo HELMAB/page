@@ -16,7 +16,10 @@ class PageController extends Controller
         ])->first();
 
         if (!($page instanceof Page)) {
-            return abort(404);
+            return message_error([
+                'message_en' => 'Page was not found',
+                'message_km' => 'Page was not found',
+            ]);
         }
 
         return message_success($page);
