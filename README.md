@@ -64,7 +64,7 @@ php artisan db:seed --class=PageTableSeeder
 
 ### Routes Registration
 
-Copying those into ``routes/web.php`` file
+Copying those lines into ``routes/web.php`` file
 
 ```php
 Route::get('page/{type}', 'PageController@getPage');
