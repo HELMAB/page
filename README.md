@@ -19,7 +19,7 @@ return [
 ];
 ```
 
-Publish `page.php` configuration file and then you need to run command `php artisan config:cache`
+Publish `page.php` configuration file and then you need to run command `php artisan optimize`
 
 ```shell
 php artisan vendor:publish --tag=page-config  --force
@@ -62,37 +62,16 @@ composer dumpautoload
 php artisan db:seed --class=PageTableSeeder
 ```
 
-### Backend
+### Routes Registration
 
-```php
-Route::group(['prefix' => 'page'], function () {
-    Route::group(['middleware' => 'auth:api'], function () {
-        Route::post('store', 'PageController@store');
-        Route::post('show', 'PageController@show');
-        Route::post('delete', 'PageController@delete');
-        Route::post('datatable', 'PageController@datatable');
-        Route::post('toggle', 'PageController@toggle');
-    });
-});
-```
-
-### Frontend
-
-```php
-Route::group(['prefix' => 'page'], function () {
-    Route::get('{type}', 'PageController@getPage');
-});
-```
-
-### UI or Webview
-
-The view file is located `resources/views/page.blade.php` 
-connect with controller `app/Http/Controllers/PageController`
-Please register this route at `routes/web.php` file.
+Copying those into ``routes/web.php`` file
 
 ```php
 Route::get('page/{type}', 'PageController@getPage');
+include_once ('Api/Backend/page.php');
+include_once ('Api/Frontend/page.php');
 ```
+
 ## License
 
 This package is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
