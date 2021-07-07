@@ -1,8 +1,9 @@
-Page
+![screenshot.png](assets/img/screenshot.png)
+
+LegalPage for Laravel
 ---------------------------
 Publishing with the repeat working such as privacy policy and terms & conditions page.
 
-![screenshot.png](assets/img/screenshot.png)
 
 ## Installation
 
@@ -39,8 +40,6 @@ php artisan vendor:publish --tag=page-resource --force
 Copying those lines into ``routes/web.php`` file
 
 ```php
-// http://127.0.0.1:8000/legal/terms-and-conditions/<locale, [en, km]>
-// http://127.0.0.1:8000/legal/privacy-policy/<locale, [en, km]>
 Route::get('legal/{type}/{locale?}', 'PageController@getPage');
 
 include_once ('Api/Backend/page.php');
