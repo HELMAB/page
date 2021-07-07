@@ -70,11 +70,37 @@ php artisan db:seed --class=PageTableSeeder
 Copying those lines into ``routes/web.php`` file
 
 ```php
+// http://127.0.0.1:8000/legal/terms-and-conditions/<locale, [en, km]>
+// http://127.0.0.1:8000/legal/privacy-policy/<locale, [en, km]>
 Route::get('legal/{type}/{locale?}', 'PageController@getPage');
+
 include_once ('Api/Backend/page.php');
 include_once ('Api/Frontend/page.php');
 ```
 
+### Testing
+
+```bash
+composer test
+```
+
+### Changelog
+
+Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+
+## Contributing
+
+Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+
+### Security
+
+If you discover any security related issues, please email mabhelitc@gmail.com instead of using the issue tracker.
+
+## Credits
+
+-   [Mab Hel](https://github.com/asorasoft)
+-   [All Contributors](../../contributors)
+
 ## License
 
-This package is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
