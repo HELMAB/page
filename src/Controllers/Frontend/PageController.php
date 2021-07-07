@@ -18,7 +18,7 @@ class PageController extends Controller
         if (!($page instanceof Page)) {
             return message_error([
                 'message_en' => 'Page was not found',
-                'message_km' => 'Page was not found',
+                'message_km' => 'រកមីនឃើញទំព័រនេះទេ',
             ]);
         }
 

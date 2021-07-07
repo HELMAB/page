@@ -21,11 +21,12 @@ return [
 ];
 ```
 
-Publish `page.php` configuration file and then you need to run command `php artisan optimize`
+Publish `page.php` configuration file
 
 ```shell
 php artisan vendor:publish --tag=page-config  --force
 php artisan optimize
+php artisan migrate
 ```
 
 and you can modify those the directory.
@@ -69,7 +70,7 @@ php artisan db:seed --class=PageTableSeeder
 Copying those lines into ``routes/web.php`` file
 
 ```php
-Route::get('page/{type}', 'PageController@getPage');
+Route::get('legal/{type}/{locale?}', 'PageController@getPage');
 include_once ('Api/Backend/page.php');
 include_once ('Api/Frontend/page.php');
 ```
