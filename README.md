@@ -21,34 +21,12 @@ return [
 ];
 ```
 
-Publish `page.php` configuration file
+Publish `page.php` configuration file, and you can modify those the directory.
 
 ```shell
 php artisan vendor:publish --tag=page-config  --force
 php artisan optimize
 php artisan migrate
-```
-
-and you can modify those the directory.
-
-```php
-<?php
-
-return [
-    'route' => [
-        'frontend' => 'routes/Api/Frontend',
-        'backend' => 'routes/Api/Backend',
-    ],
-    'controller' => [
-        'frontend' => 'app/Http/Controllers/Api/Frontend',
-        'backend' => 'app/Http/Controllers/Api/Backend',
-    ],
-    'types' => [
-        'privacy-policy' => 'privacy-policy',
-        'terms-and-conditions' => 'terms-and-conditions',
-    ],
-    'view' => 'resources/views'
-];
 ```
 
 Publish routes, model, migration, controller and view files
