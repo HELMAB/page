@@ -56,16 +56,7 @@ Publish routes, model, migration, controller and view files
 ```shell
 php artisan vendor:publish --tag=page-resource --force
 ```
-## Usage
-
-### Dummy Data
-
-```shell
-composer dumpautoload
-php artisan db:seed --class=PageTableSeeder
-```
-
-### Routes Registration
+### Usage
 
 Copying those lines into ``routes/web.php`` file
 
@@ -77,6 +68,15 @@ Route::get('legal/{type}/{locale?}', 'PageController@getPage');
 include_once ('Api/Backend/page.php');
 include_once ('Api/Frontend/page.php');
 ```
+
+We already define default some content of legal page
+
+```shell
+composer dumpautoload
+php artisan db:seed --class=PageTableSeeder
+```
+
+After you seeds dummy data, you can access [terms-and-conditions](http://127.0.0.1:8000/legal/terms-and-conditions) and [privacy-policy](http://127.0.0.1:8000/legal/privacy-policy) page.
 
 ### Testing
 
